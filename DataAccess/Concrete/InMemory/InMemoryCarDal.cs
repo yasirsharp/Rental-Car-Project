@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,16 +47,15 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.ModelYear = car.ModelYear;
         }
 
-        public List<Car> GetAll()
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            return _cars;
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetById(int id)
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            Console.WriteLine($"{id} için bulunan sonuç: ");
-            return _cars.Where(carId => carId.BrandId == id).ToList();
+            throw new NotImplementedException();
         }
-
     }
 }
