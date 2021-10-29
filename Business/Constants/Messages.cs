@@ -30,5 +30,15 @@ namespace Business.Constants
 
 
         public static string SystemOffline= "Sistem bakımda!";
+        internal static string CustomerAdded;
+        internal static string CustomerCompanyNameInvalid;
+        internal static string CustomerDeleted;
+        internal static string CustomerUpdated;
+        internal static string CustomerListed;
+        internal static string UserNameInvalid;
+        internal static string UserAdded;
+        internal static string UserUpdated;
+        internal static string UserDeleted;
+        internal static string USerListed;
     }
 }
