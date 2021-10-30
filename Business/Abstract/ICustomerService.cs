@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.IDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Business.Abstract
     public interface ICustomerService
     {
         IDataResult<List<Customer>> GetAll();
-        IDataResult<List<Customer>> GetById(int id);
+        IDataResult<List<CustomerDetailDto>> GetCustomerDetails();
 
         IResult Add(Customer customer);
         IResult Update(Customer customer);

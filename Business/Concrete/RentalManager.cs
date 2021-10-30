@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.IDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            if (rental.ReturnDate < rental.RentDate)
+            var result = ChechReturnDate(rental.CarId);
+            if (!result.Success && rental.ReturnDate < rental.RentDate)
             {
                 return new ErrorResult(Messages.RentalAddFailed);
             }
@@ -71,6 +73,36 @@ namespace Business.Concrete
             }
 
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(p=>p.RentId==id), Messages.RentalListed);
+        }
+
+        public IResult ChechReturnDate(int carId)
+        {
+            var result = _rentalDal.GetCarRentalDetails(p=>p.CarId == carId && p.ReturnDate != null);
+            if (result.Count > 0)
+            {
+                return new ErrorResult(Messages.RentalAddFailed);
+            }
+            return new SuccessResult(Messages.RentalAdded);
+        }
+
+        public IResult UpdateReturnDate(Rental rental)
+        {
+            var result = _rentalDal.GetAll(p=>p.RentId == rental.RentId);
+            var updateRental = result.LastOrDefault();
+
+            if (updateRental != null)
+            {
+                return new ErrorResult(Messages.RentalUpdateFailed);
+            }
+
+            updateRental.ReturnDate = rental.ReturnDate;
+            _rentalDal.Update(updateRental);
+            return new SuccessResult(Messages.RentalUpdated);
+        }
+
+        public IDataResult<List<CarRentalDetailDto>> GetRentalCarDetails()
+        {
+            return new SuccessDataResult<List<CarRentalDetailDto>>(_rentalDal.GetCarRentalDetails(), Messages.RentalListed);
         }
     }
 }

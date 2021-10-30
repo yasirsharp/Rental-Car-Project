@@ -30,22 +30,26 @@ namespace Business.Constants
 
 
         public static string SystemOffline= "Sistem bakımda!";
-        internal static string CustomerAdded;
-        internal static string CustomerCompanyNameInvalid;
-        internal static string CustomerDeleted;
-        internal static string CustomerUpdated;
-        internal static string CustomerListed;
-        internal static string UserNameInvalid;
-        internal static string UserAdded;
-        internal static string UserUpdated;
-        internal static string UserDeleted;
-        internal static string USerListed;
-        internal static string RentalAddFailed;
-        internal static string RentalAdded;
-        internal static string RentalDeleteFailed;
-        internal static string RentalDeleted;
-        internal static string RentalUpdateFailed;
-        internal static string RentalUpdated;
-        internal static string RentalListed;
+        
+        public static string CustomerCompanyNameInvalid = "Müşteri bireysel/kurumsal ismi geçersiz lütfen kontrol edini!";
+        public static string CustomerDeleted = "Müşteri silindi.";
+        public static string CustomerUpdated = "Müşteri güncellendi.";
+        public static string CustomerListed = "Müşteriler listelendi.";
+        public static string CustomerAdded = "Müşteri eklendi.";
+        internal static string CustomerIdNotSpace = "Müşteri id boş bırakılamaz.";
+        
+        public static string UserNameInvalid = "Gereçsiz kullanıcı adı.";
+        public static string UserAdded = "Kullanıcı eklendi.";
+        public static string UserUpdated = "Kullanıcı güncellendi.";
+        public static string UserDeleted = "Kullanıcı silindi.";
+        public static string USerListed = "Kullanıcı/lar listelendi.";
+        
+        public static string RentalAddFailed = "Araç kiralanamadı.";
+        public static string RentalAdded = "Araç başarıyla kiralandı.";
+        public static string RentalDeleteFailed = "Araç Kiralama iptal edilemedi!";
+        public static string RentalDeleted = "Araç Kiralama iptal edildi.";
+        public static string RentalUpdateFailed = "Araç Kiralama güncellenenedi.";
+        public static string RentalUpdated = "Araç Kiralama güncellendi.";
+        public static string RentalListed = "Araç Kiraları listelendi.";
     }
 }
