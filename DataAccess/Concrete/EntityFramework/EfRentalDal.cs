@@ -35,7 +35,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  ModelYear = car.ModelYear,
                                  DailyPrice = car.DailyPrice,
                                  RentDate = rental.RentDate,
-                                 ReturnDate = rental.ReturnDate
+                                 ReturnDate = rental.ReturnDate,
                              };
                 return result.ToList();
 

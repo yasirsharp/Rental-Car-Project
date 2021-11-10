@@ -11,6 +11,8 @@ namespace TestUıiConsole
     {
         static void Main(string[] args)
         {
+            Console.Title = "yasirsharp rent-a-car back-end";
+
             CarManager carManager = new CarManager(new EfCarDal());
             #region Car
             //Car car1 = new Car { BrandId = 1003, ColorId = 5, DailyPrice = 1300, ModelYear = 2006, Description = "Araç hakkında bilgi bulunmamaktadır."};
@@ -19,18 +21,18 @@ namespace TestUıiConsole
             //carManager.Add(car1);
             //carManager.Add(car2);
             //carManager.Add(car3);
-            //LocalGetCar(carManager);
             #endregion
+            //LocalGetCar(carManager);
 
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             #region Brand
-            //LocalBrandTest(brandManager);
             #endregion
+            //LocalBrandTest(brandManager);
 
             ColorManager colorManager = new ColorManager(new EfColorDal());
             #region Color
-            //LocalColorTest(colorManager);
             #endregion
+            //LocalColorTest(colorManager);
 
             UserManager userManager = new UserManager(new EfUserDal());
             #region User
@@ -50,8 +52,8 @@ namespace TestUıiConsole
             //userManager.Add(user7);
             //User userToDelete = new User { Id = 2005};
             //userManager.Delete(userToDelete);
-            //LocalUserTest(userManager);
             #endregion
+            //LocalUserTest(userManager);
 
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
             #region Customer
@@ -71,8 +73,8 @@ namespace TestUıiConsole
             //customerManager.Add(customer6);
             //customerManager.Add(customer7);
             //customerManager.Add(customer8);
-            //LocalCustomerTest(customerManager);
             #endregion
+            //LocalCustomerTest(customerManager);
 
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
             #region Rental
@@ -95,12 +97,10 @@ namespace TestUıiConsole
             //rentalManager.Add(rental6);
             //rentalManager.Add(rental7);
             //rentalManager.Add(rental8);
-
-
-            LocalRentalTest(rentalManager);
-            
-
             #endregion
+            LocalRentalTest(rentalManager);
+
+            Console.ReadKey();
         }
 
         private static void LocalRentalTest(RentalManager rentalManager)
@@ -120,7 +120,7 @@ namespace TestUıiConsole
                         $"---------------------"
                     );
                 }
-                Console.WriteLine(result.Message);
+                Console.WriteLine($"Şu kadar kira listelendi {result.Data.Count}");
             }
             else
             {
@@ -139,10 +139,10 @@ namespace TestUıiConsole
                     Console.WriteLine(
                         $"User Id:          {user1.Id} \n" +
                         $"User Name:        {user1.FirstName} \n" +
-                        $"User E-Mail:      {user1.EMail}  \n" +
+                        $"User E-Mail:      {user1.LastName}  \n" +
                         $"--------------------------------");
                 }
-                Console.WriteLine(result.Message);
+                Console.WriteLine($"Şu kadar kullanıcı listelendi {result.Data.Count}");
             }
             else
             {
@@ -163,6 +163,7 @@ namespace TestUıiConsole
                         $"Customer of full name:            {customer.UserFName} {customer.UserLName}\n" +
                         $"--------------------------------");
                 }
+                Console.WriteLine($"Şu kadar müşteri listelendi {result.Data.Count}");
             }
             else
             {
@@ -182,6 +183,7 @@ namespace TestUıiConsole
                         $"Color Name:       {color.ColorName} \n" +
                         $"--------------------------------");
                 }
+                Console.WriteLine($"Şu kadar renk listelendi {result.Data.Count}");
             }
             else
             {
@@ -201,6 +203,7 @@ namespace TestUıiConsole
                         $"Brand Name:       {brand.BrandName} \n" +
                         $"--------------------------------");
                 }
+                Console.WriteLine($"Şu kadar marka listelendi {result.Data.Count}");
             }
             else
             {
@@ -225,6 +228,7 @@ namespace TestUıiConsole
                         $"Car Description:  {car.Description}\n" +
                         $"------------------------------------\n");
                 }
+                Console.WriteLine($"Şu kadar araç listelendi {result.Data.Count}");
             }
             else
             {
