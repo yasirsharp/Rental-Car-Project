@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         public IResult Delete(Car car)
         {
-            if (car.CarId > 0)
+            if (car.CarId < 0)
             {
                 return new ErrorResult(Messages.CarInvalid);
             }
