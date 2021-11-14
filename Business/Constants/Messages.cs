@@ -36,7 +36,7 @@ namespace Business.Constants
         public static string CustomerUpdated = "Müşteri güncellendi.";
         public static string CustomerListed = "Müşteriler listelendi.";
         public static string CustomerAdded = "Müşteri eklendi.";
-        internal static string CustomerIdNotSpace = "Müşteri id boş bırakılamaz.";
+        public static string CustomerIdNotSpace = "Müşteri id boş bırakılamaz.";
         
         public static string UserNameInvalid = "Gereçsiz kullanıcı adı.";
         public static string UserAdded = "Kullanıcı eklendi.";
@@ -51,5 +51,6 @@ namespace Business.Constants
         public static string RentalUpdateFailed = "Araç Kiralama güncellenenedi.";
         public static string RentalUpdated = "Araç Kiralama güncellendi.";
         public static string RentalListed = "Araç Kiraları listelendi.";
+        public static string CheckDates = "Lütfen tarihleri kontrol ediniz.";
     }
 }
